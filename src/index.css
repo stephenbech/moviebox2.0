@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer{
+      .font{
+          font-family: sans-serif, "DM sans";
+          line-height: normal;
+          letter-spacing: -0.32px;
+      }
+    
+      .font2{
+        font-family: Gayathri;
+      }
+    }
