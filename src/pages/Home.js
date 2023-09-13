@@ -66,7 +66,7 @@ function Home() {
 
                   <div>
                         
-                        <div className=' flex flex-nowrap px-4  lg:px-20 justify-around  mt-5'>
+                        <div className=' flex flex-nowrap px-4 justify-around  mt-5'>
                               <Image alt='logo' path={"/Logo.svg"} data-testid='logo' className='h-10 ' />
                               <div>
                                     <Search  onSearch={handleSearch} />

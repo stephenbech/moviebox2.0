@@ -77,7 +77,7 @@ function Slider() {
                   </div>
             </div>
             <p className="w-72 text-white text-sm font-medium leading-none">Release Date: {currentMovie.release_date}</p>
-            <p className="w-64 sm:w-80 text-white text-sm font-medium leading-none">Overview: {currentMovie.overview}</p>
+            <p className="w-64 sm:w-96 text-white text-sm font-medium leading-none">Overview: {currentMovie.overview}</p>
             <div className="Button px-4 py-1.5 bg-rose-700 rounded-md justify-start items-center gap-2 inline-flex">
                   <Image alt="play" path={'/play.svg'} className="Play w-5 h-5 relative" />
                   <div className="WatchTrailer text-white text-sm font-bold font uppercase leading-normal">Watch trailer</div>
