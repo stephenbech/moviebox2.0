@@ -123,10 +123,10 @@ function MovieDetails() {
                       </div>
                       <div className='sm:flex  mt-40'>
                             <h2 data-testid="movie-title" className='text-neutral-700 w-80 sm:text-xl font-bold'>Title: {movie.title}</h2>
-                            <span className='hidden sm-inlineflex rounded-full  h-1 w-1 mt-3 ml-2 mr-2 bg-gray-700'></span>
+                            <span className='hidden sm:inline-flex rounded-full  h-1 w-1 mt-3 ml-2 mr-2 bg-gray-700'></span>
 
                             <h2 data-testid="movie-release-date" className='text-neutral-700 sm:text-xl w-80 font-bold'> {movie.release_date}</h2>
-                            <span className='hidden sm-inlineflex rounded-full  h-1 w-1 mt-3 ml-2 mr-2 bg-gray-700'></span>
+                            <span className='hidden sm:inline-flex rounded-full  h-1 w-1 mt-3 ml-2 mr-2 bg-gray-700'></span>
 
                             <h2 data-testid="movie-runtime" className='text-neutral-700 w-80 sm:text-xl font-bold'> {movie.runtime} Minutes</h2>
                       </div> 
