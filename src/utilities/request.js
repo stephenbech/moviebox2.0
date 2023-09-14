@@ -7,7 +7,7 @@ export const baseUrl = 'https://api.themoviedb.org/3';
 
 export const requests = async () => {
       try {
-        const response = await axios.get(`${baseUrl}/discover/movie/`, {
+        const response = await axios.get(`${baseUrl}/movie/top_rated`, {
           params: {
             api_key: apiKey,
             page: 1, // Adjust the page number as needed

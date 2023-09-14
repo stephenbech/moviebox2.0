@@ -4,6 +4,7 @@ import { Link} from 'react-router-dom'
 import { Image } from './Images';
 import { HeartIcon} from '@heroicons/react/24/outline'
 
+
 function Card() {
       const[movies, setMovies] = useState([]);
 
@@ -12,7 +13,7 @@ function Card() {
             async function fetchTopMovies() {
               try {
                 const topMovies = await requests();
-                console.log('Top Movies:', topMovies);
+                
                 const top10Movies = topMovies.slice(0, 10);
                 setMovies(top10Movies);
                 // Use the fetched data in your component
@@ -79,11 +80,11 @@ return (
                   <div data-testid="movie-title" className="StrangerThings w-44 font text-gray-900 text-sm font-semibold">{movie.title}</div>
                   <div className="Rating w-44 justify-between items-start gap-8 inline-flex">
                         <div className="Imdb justify-start items-center gap-2.5 flex">
-                              <Image alt='' className=" w-9 h-4" path={"/Imdb.svg"} />
+                              <Image alt='' className=" w-9 h-4" path={"imdb.svg"} />
                               <div className="0100 text-gray-900 text-xs font font-normal leading-3">86.0 / 100</div>
                         </div>
                         <div className="RottenTomatoes justify-start items-center gap-2.5 flex">
-                              <Image alt='' className=" w-4 h-4" path={"/Tomato.svg"} />
+                              <Image alt='' className=" w-4 h-4" path={"tomato.svg"} />
                               <div className=" text-gray-900 font text-xs font-normal leading-3">97%</div>
                         </div>
                   </div>

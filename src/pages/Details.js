@@ -98,10 +98,10 @@ function MovieDetails() {
     <div>
       
       {movie ? (
-        <div classname='block'>
-          <div className=' flex bg-black h-20 flex-nowrap px-4  lg:px-20 justify-around  py-5'>
+        <div className='block'>
+          <div className=' flex bg-black h-20 flex-nowrap sm:px-0 px-4  lg:px-0 justify-around  py-5'>
                  <a href='/'> 
-                 <Image alt='logo' path={"/Logo.svg"} data-testid='logo' className='h-10 ' />
+                 <Image alt='logo' path={"logo.svg"} data-testid='logo' className='h-10 ' />
                  </a>
                   <div>
                         <Search  onSearch={handleSearch} />
@@ -111,7 +111,7 @@ function MovieDetails() {
                         <h4 className='text-white text-base font-bold leading-normal font text-center mt-2'>
                               Signin
                         </h4>
-                        <Image className=' bg-red-700 rounded-3xl p-2' path={'/Menualt4.svg'}/>
+                        <Image className=' bg-red-700 rounded-3xl p-2' path={'menualt4.svg'}/>
                   </div>
             </div>
             <div className='flex space-x-5'>
@@ -119,13 +119,13 @@ function MovieDetails() {
               <div className='block h-screen'>
                       <div className='relative mr-16 justify-items-center items-center'>
                         <img alt='killo' className=' inset-0 -z-10 absolute  object-cover h-96 w-full mt-2 justify-start items-center shadow-md rounded-md '  src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}/>
-                        <Image alt="hello" className="mt-36 ml-24 sm:ml-96 rounded-full w-28 h-28 justify-center cursor-pointer items-center gap-28 inline-flex bg-white bg-opacity-30 shadow border border-gray-200 border-opacity-20 backdrop-blur-sm " path={'/play.svg'}/>
+                        <Image alt="hello" className="mt-36 ml-20 sm:ml-96 rounded-full w-28 h-28 justify-center cursor-pointer items-center gap-28 inline-flex bg-white bg-opacity-30 shadow border border-gray-200 border-opacity-20 backdrop-blur-sm " path={'play.svg'}/>
                       </div>
                       <div className='sm:flex  mt-40'>
-                            <h2 data-testid="movie-title" className='text-neutral-700 w-80 sm:text-xl font-bold'>Title: {movie.title}</h2>
+                            <h2 data-testid="movie-title" className='text-neutral-700 w-72 sm:text-xl font-bold'> {movie.title}</h2>
                             <span className='hidden sm:inline-flex rounded-full  h-1 w-1 mt-3 ml-2 mr-2 bg-gray-700'></span>
 
-                            <h2 data-testid="movie-release-date" className='text-neutral-700 sm:text-xl w-80 font-bold'> {movie.release_date}</h2>
+                            <h2 data-testid="movie-release-date" className='text-neutral-700 sm:text-xl  font-bold'> {movie.release_date}</h2>
                             <span className='hidden sm:inline-flex rounded-full  h-1 w-1 mt-3 ml-2 mr-2 bg-gray-700'></span>
 
                             <h2 data-testid="movie-runtime" className='text-neutral-700 w-80 sm:text-xl font-bold'> {movie.runtime} Minutes</h2>

@@ -50,11 +50,11 @@ function MovieList({movies,  loading }) {
                   <div data-testid="movie-title" className="StrangerThings w-24 font text-gray-900 text-sm font-semibold">{movie.title}</div>
                   <div className="Rating w-56 justify-between items-start block">
                         <div className="Imdb justify-start items-center gap-2.5 flex">
-                              <Image alt='' className=" w-9 h-4" path={"/Imdb.svg"} />
+                              <Image alt='' className=" w-9 h-4" path={"imdb.svg"} />
                               <div className="0100 text-gray-900 text-xs font font-normal leading-3">86.0 / 100</div>
                         </div>
                         <div className="RottenTomatoes justify-start items-center gap-2.5 flex">
-                        <Image alt='' className=" mt-2 w-4 h-4" path={"/Tomato.svg"} />
+                        <Image alt='' className=" mt-2 w-4 h-4" path={"tomato.svg"} />
                               <div className=" text-gray-900 font text-xs font-normal leading-3">97%</div>
                         </div>
                   </div>

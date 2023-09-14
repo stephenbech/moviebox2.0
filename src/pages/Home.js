@@ -66,8 +66,8 @@ function Home() {
 
                   <div>
                         
-                        <div className=' flex flex-nowrap px-4 justify-around  mt-5'>
-                              <Image alt='logo' path={"/Logo.svg"} data-testid='logo' className='h-10 ' />
+                        <div className=' flex flex-nowrap justify-around sm:px-0 px-4  mt-5'>
+                              <Image alt='logo' path={"logo.svg"} data-testid='logo' className='h-10 ' />
                               <div>
                                     <Search  onSearch={handleSearch} />
                               </div>
@@ -76,7 +76,7 @@ function Home() {
                                     <h4 className='text-white text-base font-bold leading-normal font text-center mt-2'>
                                           Signin
                                     </h4>
-                                    <Image className=' bg-red-700 rounded-3xl p-2' path={'/Menualt4.svg'}/>
+                                    <Image className=' bg-red-700 rounded-3xl p-2' path={'menualt4.svg'}/>
                               </div>
                         </div>
                         
@@ -97,10 +97,10 @@ function Home() {
                               </div>
                               <div className="Footer mt-20 w-full flex-col inline-flex items-center gap-9 ">
                                     <div className="Social justify-start items-center gap-12 inline-flex" >
-                                          <Image path={"/facebook.svg"} className="FaBrandsFacebookSquare w-6 h-7 relative" />
-                                          <Image path={"/instagram.svg"} className="FaBrandsInstagram w-6 h-7 relative" />
-                                          <Image path={"/twitter.svg"} className="FaBrandsTwitter w-6 h-6 relative" />
-                                          <Image path={"/youtube.svg"} className="FaBrandsYoutube w-6 h-5 relative" />
+                                          <Image path={"facebook.svg"} className="FaBrandsFacebookSquare w-6 h-7 relative" />
+                                          <Image path={"instagram.svg"} className="FaBrandsInstagram w-6 h-7 relative" />
+                                          <Image path={"twitter.svg"} className="FaBrandsTwitter w-6 h-6 relative" />
+                                          <Image path={"youtube.svg"} className="FaBrandsYoutube w-6 h-5 relative" />
                                     </div>
                                     <div className="Links justify-start items-start gap-4 inline-flex">
                                           <div className="ConditionsOfUse text-gray-900 text-base font sm:text-lg font-bold">Conditions of Use</div>
