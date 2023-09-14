@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/moviebox2.0/static/css/main.ead24c64.css",
-    "main.js": "/moviebox2.0/static/js/main.2aec7547.js",
-    "static/js/787.246e5ac3.chunk.js": "/moviebox2.0/static/js/787.246e5ac3.chunk.js",
-    "index.html": "/moviebox2.0/index.html",
-    "main.ead24c64.css.map": "/moviebox2.0/static/css/main.ead24c64.css.map",
-    "main.2aec7547.js.map": "/moviebox2.0/static/js/main.2aec7547.js.map",
-    "787.246e5ac3.chunk.js.map": "/moviebox2.0/static/js/787.246e5ac3.chunk.js.map"
+    "main.css": "/static/css/main.ead24c64.css",
+    "main.js": "/static/js/main.ae46aaa1.js",
+    "static/js/787.246e5ac3.chunk.js": "/static/js/787.246e5ac3.chunk.js",
+    "index.html": "/index.html",
+    "main.ead24c64.css.map": "/static/css/main.ead24c64.css.map",
+    "main.ae46aaa1.js.map": "/static/js/main.ae46aaa1.js.map",
+    "787.246e5ac3.chunk.js.map": "/static/js/787.246e5ac3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ead24c64.css",
-    "static/js/main.2aec7547.js"
+    "static/js/main.ae46aaa1.js"
   ]
 }
