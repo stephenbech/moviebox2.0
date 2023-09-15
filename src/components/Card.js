@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import {requests} from '../utilities/request';
-import { Link} from 'react-router-dom'
+import { Link, useParams} from 'react-router-dom'
 import { Image } from './Images';
 import { HeartIcon} from '@heroicons/react/24/outline'
 
 
 function Card() {
       const[movies, setMovies] = useState([]);
-
+      const {id} = useParams();
       useEffect(() => {
             // Define an async function to fetch the data
             async function fetchTopMovies() {
@@ -48,7 +48,7 @@ return (
                   transition duration-300 delay-150 hover:delay-300 hover:ease-in-out" 
                   data-testid="movie-card"
             >
-                  <div className="Poster w-44 h-64 relative">
+                  <div className="Poster w-44 h-72 relative">
                         <div className="PosterImage w-48 h-96 left-0 top-0 absolute">
                               <img 
                                     data-testid="movie-poster" alt=''
@@ -76,7 +76,7 @@ return (
                               </div>
                         </div>
                   </div>
-                  <div data-testid="movie-release-date" className="Usa2016Current text-gray-400 text-xs font-bold">USA, {movie.release_date}</div>
+                  <div data-testid="movie-release-date" className="Usa2016Current text-gray-900 text-xs font-bold">USA, {movie.release_date}</div>
                   <div data-testid="movie-title" className="StrangerThings w-44 font text-gray-900 text-sm font-semibold">{movie.title}</div>
                   <div className="Rating w-44 justify-between items-start gap-8 inline-flex">
                         <div className="Imdb justify-start items-center gap-2.5 flex">

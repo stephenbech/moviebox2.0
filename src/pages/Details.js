@@ -113,13 +113,15 @@ function MovieDetails() {
                         </h4>
                         <Image className=' bg-red-700 rounded-3xl p-2' path={'menualt4.svg'}/>
                   </div>
+                 
             </div>
-            <div className='flex space-x-5'>
-                <Sidebar/>
+           
+            <div className='flex h-screen space-x-5'>
+            <Sidebar/>
               <div className='block h-screen'>
                       <div className='relative mr-16 justify-items-center items-center'>
                         <img alt='killo' className=' inset-0 -z-10 absolute  object-cover h-96 w-full mt-2 justify-start items-center shadow-md rounded-md '  src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}/>
-                        <Image alt="hello" className="mt-36 ml-20 sm:ml-96 rounded-full w-28 h-28 justify-center cursor-pointer items-center gap-28 inline-flex bg-white bg-opacity-30 shadow border border-gray-200 border-opacity-20 backdrop-blur-sm " path={'play.svg'}/>
+                        <Image alt="hello" className="mt-36 ml-20 sm:ml-96 rounded-full w-28 h-28 justify-center cursor-pointer items-center gap-30 inline-flex bg-white bg-opacity-30 shadow border border-gray-200 border-opacity-20 backdrop-blur-sm " path={'play.svg'}/>
                       </div>
                       <div className='sm:flex  mt-40'>
                             <h2 data-testid="movie-title" className='text-neutral-700 w-72 sm:text-xl font-bold'> {movie.title}</h2>
