@@ -93,7 +93,7 @@ function Home() {
                                     </div>
                               </div>
                               <div className='justify-center mt-10 align-middle'>
-                                    <Card data-testid="movie-card"/>
+                                    <Card />
                               </div>
                               <div className="Footer mt-20 w-full flex-col inline-flex items-center gap-9 ">
                                     <div className="Social justify-start items-center gap-12 inline-flex" >

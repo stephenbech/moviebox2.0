@@ -14,11 +14,13 @@ const base_Url = baseUrl;
 function MovieDetails() {
   const [movie, setMovie] = useState(null);
   const [movies, setMovies] = useState([]);
-      const [loading, setLoading] = useState(false);
-      const [searched, setSearched] = useState(false)
-      const [content, setContent] = useState(<></>);
-      const [isModalOpen, setIsModalOpen] = useState(false);
-     
+  const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false)
+  const [content, setContent] = useState(<></>);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const UTC =movie?.release_date
+  const date = new Date(UTC).toUTCString()
 
       const openModal= () =>{
             setIsModalOpen(true)
@@ -123,14 +125,16 @@ function MovieDetails() {
                         <img alt='killo' className=' inset-0 -z-10 absolute  object-cover h-96 w-full mt-2 justify-start items-center shadow-md rounded-md '  src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}/>
                         <Image alt="hello" className="mt-36 ml-20 sm:ml-96 rounded-full w-28 h-28 justify-center cursor-pointer items-center gap-30 inline-flex bg-white bg-opacity-30 shadow border border-gray-200 border-opacity-20 backdrop-blur-sm " path={'play.svg'}/>
                       </div>
-                      <div className='sm:flex  mt-40'>
+                      <div className='sm:flex border mt-40'>
                             <h2 data-testid="movie-title" className='text-neutral-700 w-72 sm:text-xl font-bold'> {movie.title}</h2>
-                            <span className='hidden sm:inline-flex rounded-full  h-1 w-1 mt-3 ml-2 mr-2 bg-gray-700'></span>
+                            {/* <span className='hidden sm:inline-flex rounded-full  h-1 w-1 mt-3 ml-2 mr-2 bg-gray-700'></span> */}
 
-                            <h2 data-testid="movie-release-date" className='text-neutral-700 sm:text-xl  font-bold'> {movie.release_date}</h2>
-                            <span className='hidden sm:inline-flex rounded-full  h-1 w-1 mt-3 ml-2 mr-2 bg-gray-700'></span>
-
-                            <h2 data-testid="movie-runtime" className='text-neutral-700 w-80 sm:text-xl font-bold'> {movie.runtime} Minutes</h2>
+                            <h2 data-testid="movie-release-date" className='text-neutral-700 sm:text-xl  font-bold'> {date && date}</h2>
+                            <div className='flex'>
+                              {/* <span className='hidden sm:inline-flex rounded-full  h-1 w-1 mt-3 ml-2 mr-2 bg-gray-700'></span> */}
+                              {/* <p className=' mr-2 text-neutral-700 sm:text-xl font-bold'>Runtime (in  minutes):</p> */}
+                              <h2 data-testid="movie-runtime" className='text-neutral-700 w-80 sm:text-xl font-bold'> {movie.runtime}</h2>
+                            </div>
                       </div> 
                       <div className='sm:flex'>
                             <div>

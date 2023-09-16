@@ -21,7 +21,7 @@ function MovieList({movies,  loading }) {
       
       {movies && movies.length > 0 ? (movies.map((movie, index) => (
             <Link 
-                  to={`/movie/${movie.id}`} 
+                  to={`/movies/${movie.id}`} 
                   key={index} 
                   className="MovieCard flex-col justify-start items-start gap-3 mx-4  w-24  my-4 inline-flex" 
                   data-testid="movie-card"

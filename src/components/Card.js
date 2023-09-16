@@ -7,6 +7,8 @@ import { HeartIcon} from '@heroicons/react/24/outline'
 
 function Card() {
       const[movies, setMovies] = useState([]);
+
+    
       // const {id} = useParams();
       useEffect(() => {
             // Define an async function to fetch the data
@@ -40,7 +42,10 @@ function Card() {
       // });
 return (
    <div  data-testid="movie-card" className=' '>
-      { movies.map((movie, index) => (
+      { movies.map((movie, index) => {
+            const {release_date} = movie
+            const date = new Date(release_date).toUTCString()
+            return  (
             <Link 
                   to={`/movies/${movie.id}`}
                   key={index} 
@@ -76,7 +81,7 @@ return (
                               </div>
                         </div>
                   </div>
-                  <div data-testid="movie-release-date" className="Usa2016Current text-gray-900 text-xs font-bold">USA, {movie.release_date}</div>
+                  <div data-testid="movie-release-date" className="Usa2016Current text-gray-900 text-xs font-bold">{date}</div>
                   <div data-testid="movie-title" className="StrangerThings w-44 font text-gray-900 text-sm font-semibold">{movie.title}</div>
                   <div className="Rating w-44 justify-between items-start gap-8 inline-flex">
                         <div className="Imdb justify-start items-center gap-2.5 flex">
@@ -90,7 +95,7 @@ return (
                   </div>
                   <div className="ActionAdventureHorror text-gray-400 font text-xs font-bold">Action, Adventure, Horror</div>
             </Link>
-      ))}
+            )})}
    </div>
   )
 }
