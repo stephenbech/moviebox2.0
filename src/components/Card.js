@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import {requests} from '../utilities/request';
-import { Link, useParams} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import { Image } from './Images';
 import { HeartIcon} from '@heroicons/react/24/outline'
 
 
 function Card() {
       const[movies, setMovies] = useState([]);
-      const {id} = useParams();
+      // const {id} = useParams();
       useEffect(() => {
             // Define an async function to fetch the data
             async function fetchTopMovies() {
@@ -39,14 +39,14 @@ function Card() {
       //   console.error('Error fetching top movies:', error);
       // });
 return (
-   <div className=' '>
+   <div  data-testid="movie-card" className=' '>
       { movies.map((movie, index) => (
             <Link 
-                  to={`/movie/${movie.id}`}
+                  to={`/movies/${movie.id}`}
                   key={index} 
                   className="MovieCard flex-col justify-start items-start gap-3  w-48 ml-16 sm:ml-6 my-4 inline-flex
                   transition duration-300 delay-150 hover:delay-300 hover:ease-in-out" 
-                  data-testid="movie-card"
+                 
             >
                   <div className="Poster w-44 h-72 relative">
                         <div className="PosterImage w-48 h-96 left-0 top-0 absolute">

@@ -44,7 +44,7 @@ function MovieDetails() {
 
         if (response.status === 200) {
           const movieDetails = response.data;
-          console.log(movieDetails);
+          // console.log(movieDetails);
           setMovie(movieDetails);
         } else {
           console.error('Movie not found.');
