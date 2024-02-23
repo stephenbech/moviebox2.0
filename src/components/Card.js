@@ -3,32 +3,44 @@ import {requests} from '../utilities/request';
 import { Link} from 'react-router-dom'
 import { Image } from './Images';
 import { HeartIcon} from '@heroicons/react/24/outline'
-
-
+import axios from 'axios'
 function Card() {
       const[movies, setMovies] = useState([]);
 
-    
-      // const {id} = useParams();
+      // useEffect(() => {
+      //       // Define an async function to fetch the data
+      //       async function fetchTopMovies() {
+      //         try {
+      //           const topMovies = await requests();
+      //           console.log('Top Movies:', topMovies);
+      //           const top10Movies = topMovies.slice(0, 10);
+      //           setMovies(top10Movies);
+      //           // Use the fetched data in your component
+      //         } catch (error) {
+      //           // Handle errors here
+      //           console.error('Error fetching top movies:', error);
+      //         }
+      //       }
+        
+      //       // Call the async function when the component mounts
+      //       fetchTopMovies();
+      //     }, []); // The empty array [] ensures this effect runs once on mount
+        
       useEffect(() => {
-            // Define an async function to fetch the data
+            // Fetch top movies
             async function fetchTopMovies() {
               try {
-                const topMovies = await requests();
-                
-                const top10Movies = topMovies.slice(0, 10);
-                setMovies(top10Movies);
-                // Use the fetched data in your component
+                const response = await axios(requests());
+                const topMovies = response.data.results;
+                setMovies(topMovies);
+            //     console.log(topMovies)
               } catch (error) {
-                // Handle errors here
                 console.error('Error fetching top movies:', error);
               }
             }
         
-            // Call the async function when the component mounts
             fetchTopMovies();
-          }, []); // The empty array [] ensures this effect runs once on mount
-        
+          }, []);
       // requests()
       // .then((topMovies) => {
       //   console.log('Top Movies:', topMovies);
@@ -57,7 +69,7 @@ return (
                         <div className="PosterImage w-48 h-96 left-0 top-0 absolute">
                               <img 
                                     data-testid="movie-poster" alt=''
-                                    className="Postertransition duration-300 delay-150 hover:delay-300 rounded-xl w-48"  
+                                    className="Poster transition duration-300 delay-150 hover:delay-300 rounded-xl w-48"  
                                     src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} 
                               />
                         </div>
@@ -86,7 +98,7 @@ return (
                   <div className="Rating w-44 justify-between items-start gap-8 inline-flex">
                         <div className="Imdb justify-start items-center gap-2.5 flex">
                               <Image alt='' className=" w-9 h-4" path={"imdb.svg"} />
-                              <div className="0100 text-gray-900 text-xs font font-normal leading-3">86.0 / 100</div>
+                              <div className="0100 text-gray-900 text-xs font font-normal leading-3"> {movie.vote_average} </div>
                         </div>
                         <div className="RottenTomatoes justify-start items-center gap-2.5 flex">
                               <Image alt='' className=" w-4 h-4" path={"tomato.svg"} />

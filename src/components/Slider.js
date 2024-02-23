@@ -1,28 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Image } from './Images';
-import {baseUrl, apiKey} from '../utilities/request';
+import {requests} from '../utilities/request';
 
-const api_Key = apiKey;
-const base_Url = baseUrl;
+
 
 function Slider() {
   const [movies, setMovies] = useState([]);
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
   useEffect(() => {
+    // Fetch top movies
     async function fetchTopMovies() {
       try {
-        const response = await axios.get(`${base_Url}/discover/movie`, {
-          params: {
-            api_key: api_Key,
-            page: 1,
-          },
-        });
-
-        // Access the response data
+        const response = await axios(requests());
         const topMovies = response.data.results;
         setMovies(topMovies);
+        // console.log(topMovies)
       } catch (error) {
         console.error('Error fetching top movies:', error);
       }
@@ -41,7 +35,7 @@ function Slider() {
       // Clear the interval when the component unmounts
       clearInterval(intervalId);
     };
-  }, [movies]);
+  }, [ currentMovieIndex, movies]);
 
   // const nextMovie = () => {
   //   setCurrentMovieIndex((prevIndex) => (prevIndex + 1) % movies.length);
@@ -63,13 +57,13 @@ function Slider() {
       </div> */}
       {currentMovie && (
         <div className="movie-details">
-          <img alt='poster' src={`https://image.tmdb.org/t/p/original/${currentMovie.poster_path}`} data-testid='movie-poster' className='absolute inset-0 -z-10 h-full  w-full object-cover'/>
-          <div className="font w-96 ml-6 mt-14 lg:mt-36 lg:mx-40  flex-col justify-start items-start gap-4 inline-flex">
+          <img alt='poster' src={`https://image.tmdb.org/t/p/original/${currentMovie.poster_path}`} data-testid='movie-poster' className='absolute inset-0 -z-10 h-full  w-full object-cover object-right-top'/>
+          <div className="font w-96 ml-6 mt-36 lg:mt-36 lg:mx-40  flex-col justify-start items-start gap-4 inline-flex">
             <div data-testid='movie-title' className="font w-72 sm:w-96 text-white font text-lg sm:text-5xl font-bold leading-10">{currentMovie.title}</div>
             <div className="Rating relative">
                   <div className="Imdb w-28 h-4 left-0 top-0 absolute justify-start items-center gap-2.5 inline-flex">
                         <Image alt="" className=" w-9 h-4" path={'imdb.svg'} />
-                        <div className=" font text-white text-xs font-normal leading-3">86.0 / 100</div>
+                        <div className=" font text-white text-xs font-normal leading-3">Rating {currentMovie.vote_average} </div>
                   </div>
                   <div className="RottenTomatoes w-12 h-4 left-36 top-0 absolute justify-start items-center gap-2.5 inline-flex">
                         <Image alt='' className="Pngitem13810561 w-4 h-4" path={'tomato.svg'} />

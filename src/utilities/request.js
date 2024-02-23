@@ -1,27 +1,25 @@
-import axios from 'axios';
 
-export const apiKey = '0c6e3ca58dc7bff10754041cc40f85a0';
+export const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYzZlM2NhNThkYzdiZmYxMDc1NDA0MWNjNDBmODVhMCIsInN1YiI6IjY0ZmYxNGY0ZTBjYTdmMDE0ZjZmZGMwNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sJDlPcMsYwV0g8zeOR0j4l7UTribd7sW9XR39FXqSOY';
 
 export const baseUrl = 'https://api.themoviedb.org/3';
 
 
-export const requests = async () => {
-      try {
-        const response = await axios.get(`${baseUrl}/movie/top_rated`, {
-          params: {
-            api_key: apiKey,
-            page: 1, // Adjust the page number as needed
-          },
-        });
-    
-        // Access the response data
-        const topMovies = response.data.results;
-        return topMovies;
-      } catch (error) {
-        // Handle errors (e.g., network error, API error)
-        console.error('Error fetching top movies:', error);
-        throw error; // Rethrow the error to handle it elsewhere if needed
-      }
-    };
+export  const requests = () => {
+  return {
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/discover/movie',
+    params: {
+      include_adult: 'true',
+      include_video: 'true',
+      language: 'en-US',
+      page: '1',
+      sort_by: 'popularity.desc'
+    },
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYzZlM2NhNThkYzdiZmYxMDc1NDA0MWNjNDBmODVhMCIsInN1YiI6IjY0ZmYxNGY0ZTBjYTdmMDE0ZjZmZGMwNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sJDlPcMsYwV0g8zeOR0j4l7UTribd7sW9XR39FXqSOY'
+    }
+  };
+};
 
 // export default (requests )
